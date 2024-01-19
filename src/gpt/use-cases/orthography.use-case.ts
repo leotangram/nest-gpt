@@ -23,18 +23,21 @@ export const orthographyCheckUseCase = async (
           {
             userScore: number,
             errors: string[], // ['error -> solución']
-            message: string, // 'Usa emojis y textos para felicitar al usuario'
+            message: string, // 'Usa emojis, por lo menos uno, y textos para felicitar al usuario'
           }
           `,
       },
       { role: 'user', content: prompt },
     ],
-    model: 'gpt-4',
+    model: 'gpt-3.5-turbo-1106',
     temperature: 0.3,
     max_tokens: 150,
+    response_format: {
+      type: 'json_object',
+    },
   });
 
-  console.log(completion);
+  const jsonResponse = JSON.parse(completion.choices[0].message.content);
 
-  return completion.choices[0];
+  return jsonResponse;
 };
