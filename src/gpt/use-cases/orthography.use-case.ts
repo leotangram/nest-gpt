@@ -1,3 +1,9 @@
-export const orthographyCheckUseCase = async () => {
-  return { hola: 'Mundo desde Orthography check Use Case' };
+interface Options {
+  prompt: string;
+}
+
+export const orthographyCheckUseCase = async (options: Options) => {
+  const { prompt } = options;
+
+  return { prompt };
 };
