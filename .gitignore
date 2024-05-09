@@ -36,3 +36,7 @@ lerna-debug.log*
 
 # Files
 .env
+
+# Exclude generated content
+/generated/*
+!/generated/.gitkeep
