@@ -22,7 +22,7 @@ export const imageVariationUseCase = async (
   });
 
   const fileName = await downloadImageAsPng(response.data[0].url);
-  const url = `${process.env.SERVER_URL}/gpe/image-generation/${fileName}`;
+  const url = `${process.env.SERVER_URL}/gpt/image-generation/${fileName}`;
 
   return {
     url,
