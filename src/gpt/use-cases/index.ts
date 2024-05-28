@@ -1,5 +1,6 @@
 export { audioToTextUseCase } from './audio-to-text.use-case';
 export { imageGenerationUseCase } from './image-generation.use-case';
+export { imageToTextUseCase } from './image-to-text.use-case';
 export { imageVariationUseCase } from './image-variation.use-case';
 export { orthographyCheckUseCase } from './orthography.use-case';
 export { prosConsDiscussionStreamUseCase } from './pros-cons-discussion-stream.use-case';

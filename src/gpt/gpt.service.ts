@@ -6,6 +6,7 @@ import OpenAI from 'openai';
 import {
   audioToTextUseCase,
   imageGenerationUseCase,
+  imageToTextUseCase,
   imageVariationUseCase,
   orthographyCheckUseCase,
   prosConsDiscussionStreamUseCase,
@@ -97,5 +98,9 @@ export class GptService {
 
   async generateImageVariation({ baseImage }: ImageVariationDTO) {
     return imageVariationUseCase(this.openAI, { baseImage });
+  }
+
+  async imageToText(imageFile: Express.Multer.File, prompt: string) {
+    return await imageToTextUseCase(this.openAI, { imageFile, prompt });
   }
 }
